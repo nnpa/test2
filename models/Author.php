@@ -42,14 +42,16 @@ class Author extends \yii\db\ActiveRecord
         ];
     }
     
-    public function getBooksCount(){
+    public function getBooksCount()
+    {
         $bookCount = Book::find()
                 ->where(['author_id' => $this->id])
                 ->count();
         return $bookCount;
     }
     
-    public function getBooks(){
+    public function getBooks()
+    {
         $books = Book::find()
                 ->where(['author_id' => $this->id])
                 ->all();
